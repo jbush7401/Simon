@@ -1,5 +1,6 @@
 var source = require('vinyl-source-stream');
 var gulp = require('gulp');
+var sass = require('gulp-sass');
 var gutil = require('gulp-util');
 var browserify = require('browserify');
 var babelify = require('babelify');
@@ -28,9 +29,9 @@ gulp.task('styles',function() {
       .pipe(gulp.dest('build/css/fonts'));
 
   // Compiles CSS
-  gulp.src('css/style.styl')
-    .pipe(stylus())
+  gulp.src('css/*.scss')
     .pipe(autoprefixer())
+    .pipe(sass().on('error', sass.logError))
     .pipe(gulp.dest('./build/css/'))
     .pipe(reload({stream:true}))
 });
@@ -83,9 +84,9 @@ function buildScript(file, watch) {
       .pipe(source(file))
       //.pipe(gulp.dest('./build/'))
       // If you also want to uglify it
-      .pipe(buffer())
-      .pipe(uglify())
-      .pipe(rename('app.min.js'))
+      //.pipe(buffer())
+      //.pipe(uglify())
+      //.pipe(rename('app.min.js'))
       .pipe(gulp.dest('./build'))
       .pipe(reload({stream:true}))
   }

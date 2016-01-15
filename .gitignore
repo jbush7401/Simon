@@ -10,3 +10,5 @@ gen
 
 client/node_modules
 client/build
+server/knexfile.js
+server/config.js

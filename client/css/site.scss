@@ -1,0 +1,32 @@
+body {
+  font-family: "Times New Roman", Times;
+}
+
+#main {
+  position: relative;
+  width: 100%;
+}
+
+.appContent {
+  position: absolute;
+  left: 40px;
+  width: 750px;
+}
+
+#simonGame {
+  display: block;
+  margin: 0 auto;
+}
+#topInfo {
+  width: 100%;
+  border-width: 5px;
+  margin-top: 20px;
+  #newGame{
+    display: block;
+    margin: 0 auto;
+  }
+  #highScores{
+    display: block;
+    margin: 0 auto;
+  }
+}
