@@ -21,6 +21,7 @@ app.use(cors());
 var router = express.Router();
 
 var GameModel = require('./models/Game');
+var UserModel = require('./models/User');
 
 // body-parser middleware for handling request variables
 app.use(bodyParser.urlencoded({extended: true}));
